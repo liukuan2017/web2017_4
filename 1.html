@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生成绩管理</title>
+    <script type="text/javascript" src="1.js"></script>
+    <style type="text/css">
+        body {
+            font-family: 微软雅黑;
+            font-size: 20px;
+            color: #666666;
+            background-color: #f8f8f8;
+        }
+        fieldset {
+            width: 500px;
+            margin-top: 30px;
+            border: 1px solid #d6d6d6;
+            background-color: #ffffff;
+            line-height: 1.6em;
+            padding: 20px;
+        }
+        .grade{
+            width:500px;
+            margin-top: 30px;
+            border: 1px solid #d6d6d6;
+            background-color: #ffffff;
+            line-height: 1.6em;
+            padding: 20px;
+        }
+        .sort{
+            display: inline-block;
+        }
+        iframe{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<div style="float: left">
+    <form name="score" id="stu" target="iframe">
+        <fieldset>
+            <legend>成绩管理</legend>
+                <label for="Name">姓名：</label>
+                <input type="text" class="input" id="Name"><br>
+                <label for="Class">班级：</label>
+                <input type="text" class="input" id="Class"><br>
+                <label for="Chinese">语文：</label>
+                <input type="text" class="input" id="Chinese"><br>
+                <label for="Math">数学：</label>
+                <input type="text" class="input" id="Math"><br>
+                <label for="Synthesize">理综：</label>
+                <input type="text" class="input" id="Synthesize"><br>
+            <input type="submit" value="提交" name="Handle" onclick="newStudent()">
+        </fieldset>
+    </form>
+</div>
+<div style="float: left" class="grade">
+    <h1>成绩单</h1>
+    <iframe name="iframe"></iframe>
+    <button class="sort" onclick="sortChi()">语文排序</button>
+    <button class="sort" onclick="sortMath()">数学排序</button>
+    <button class="sort" onclick="sortSyn()">理综排序</button>
+    <button class="sort" onclick="sortAll()">总分排序</button>
+    <p>姓名&nbsp;&nbsp;&nbsp;班级&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语文&nbsp;&nbsp;数学&nbsp;&nbsp;理综&nbsp;&nbsp;总成绩<br></p>
+    <p id="grades"></p>
+</div>
+</body>
+</html>
